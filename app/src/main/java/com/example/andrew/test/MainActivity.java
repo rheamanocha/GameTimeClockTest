@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         textView = (TextView) findViewById(R.id.gameInfo);
         textView.setText("Click a tile to start.");
-        textView.setTextColor(Color.BLUE);
+        textView.setTextColor(Color.WHITE);
 
 
         for(int i = 0; i < 3; ++i) {
@@ -67,13 +67,13 @@ public class MainActivity extends AppCompatActivity {
                 board[x][y].setEnabled(false);
                 board[x][y].setText("X");
                 board[x][y].setTextColor(Color.BLUE);
-                board[x][y].setTextSize(TypedValue.COMPLEX_UNIT_PX, 70);
+                board[x][y].setTextSize(TypedValue.COMPLEX_UNIT_PX, 60);
                 ticTacToeGame.c[x][y] = 1;
                 if (!ticTacToeGame.checkBoard()) {
                     ticTacToeGame.makeMove();
                     board[ticTacToeGame.move.x][ticTacToeGame.move.y].setText("O");
                     board[ticTacToeGame.move.x][ticTacToeGame.move.y].setTextColor(Color.MAGENTA);
-                    board[ticTacToeGame.move.x][ticTacToeGame.move.y].setTextSize(TypedValue.COMPLEX_UNIT_PX, 70);
+                    board[ticTacToeGame.move.x][ticTacToeGame.move.y].setTextSize(TypedValue.COMPLEX_UNIT_PX, 60);
                     board[ticTacToeGame.move.x][ticTacToeGame.move.y].setEnabled(false);
                     if(ticTacToeGame.checkBoard()) {
                         displayOutome();
