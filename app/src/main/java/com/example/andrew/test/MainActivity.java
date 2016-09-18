@@ -1,8 +1,11 @@
 package com.example.andrew.test;
 
 import java.util.Random;
+
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //setBackgroundColor(Color.BLUE);
 
         board = new Button[3][3];
         board[0][0] = (Button) findViewById(R.id.tictactoe1);
@@ -29,9 +33,12 @@ public class MainActivity extends AppCompatActivity {
         board[0][2] = (Button) findViewById(R.id.tictactoe7);
         board[1][2] = (Button) findViewById(R.id.tictactoe8);
         board[2][2] = (Button) findViewById(R.id.tictactoe9);
+        //board.setBackgroundColor(Color.WHITE);
 
         textView = (TextView) findViewById(R.id.gameInfo);
         textView.setText("Click a tile to start.");
+        textView.setTextColor(Color.BLUE);
+
 
         for(int i = 0; i < 3; ++i) {
             for(int j = 0; j < 3; ++j) {
@@ -59,10 +66,14 @@ public class MainActivity extends AppCompatActivity {
             if (board[x][y].isEnabled()) {
                 board[x][y].setEnabled(false);
                 board[x][y].setText("X");
+                board[x][y].setTextColor(Color.BLUE);
+                board[x][y].setTextSize(TypedValue.COMPLEX_UNIT_PX, 70);
                 ticTacToeGame.c[x][y] = 1;
                 if (!ticTacToeGame.checkBoard()) {
                     ticTacToeGame.makeMove();
                     board[ticTacToeGame.move.x][ticTacToeGame.move.y].setText("O");
+                    board[ticTacToeGame.move.x][ticTacToeGame.move.y].setTextColor(Color.MAGENTA);
+                    board[ticTacToeGame.move.x][ticTacToeGame.move.y].setTextSize(TypedValue.COMPLEX_UNIT_PX, 70);
                     board[ticTacToeGame.move.x][ticTacToeGame.move.y].setEnabled(false);
                     if(ticTacToeGame.checkBoard()) {
                         displayOutome();
@@ -109,4 +120,5 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }
