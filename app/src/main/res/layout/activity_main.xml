@@ -7,7 +7,9 @@
         android:layout_height="match_parent"
         android:id="@+id/board"
         android:gravity="center_horizontal"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
         <TableRow
             android:layout_width="wrap_content"
@@ -111,8 +113,8 @@
             android:layout_height="match_parent"></TableRow>
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -120,9 +122,13 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Medium Text"
                 android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="0dp"
+                android:textSize="24sp"
                 android:id="@+id/gameInfo"
                 android:layout_column="1"
-                android:gravity="center_horizontal" />
+                android:gravity="center_horizontal"
+                android:maxWidth="120dp"/>
         </TableRow>
     </TableLayout>
 

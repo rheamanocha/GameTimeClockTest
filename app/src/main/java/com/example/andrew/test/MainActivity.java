@@ -58,11 +58,11 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View view) {
             if (board[x][y].isEnabled()) {
                 board[x][y].setEnabled(false);
-                board[x][y].setText("O");
+                board[x][y].setText("X");
                 ticTacToeGame.c[x][y] = 1;
                 if (!ticTacToeGame.checkBoard()) {
                     ticTacToeGame.makeMove();
-                    board[ticTacToeGame.move.x][ticTacToeGame.move.y].setText("X");
+                    board[ticTacToeGame.move.x][ticTacToeGame.move.y].setText("O");
                     board[ticTacToeGame.move.x][ticTacToeGame.move.y].setEnabled(false);
                     if(ticTacToeGame.checkBoard()) {
                         displayOutome();
